@@ -1,8 +1,12 @@
-package utils;
+package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utils.CommonMethods;
+import utils.ConfigReader;
+import utils.Constants;
+import utils.PageInitializer;
 
 import java.time.Duration;
 
