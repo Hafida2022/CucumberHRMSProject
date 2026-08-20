@@ -10,6 +10,9 @@ import utils.PageInitializer;
 
 import java.sql.ResultSet;
 
+import static utils.CommonMethods.click;
+import static utils.CommonMethods.sendText;
+
 public class AddEmployeeSteps extends PageInitializer {
 
     private String generatedEmployeeId;
@@ -18,22 +21,20 @@ public class AddEmployeeSteps extends PageInitializer {
     @Given("admin user is logged into HRMS")
     public void adminUserIsLoggedIntoHRMS() {
 
-        loginPage.usernameField.sendKeys(
-                ConfigReader.getProperty("username")
-        );
+        sendText(loginPage.usernameField,
+                ConfigReader.getProperty("username"));
 
-        loginPage.passwordField.sendKeys(
-                ConfigReader.getProperty("password")
-        );
+        sendText(loginPage.passwordField,
+                ConfigReader.getProperty("password"));
 
-        loginPage.loginButton.click();
+        click(loginPage.loginButton);
     }
 
 
     @Given("admin navigates to Add Employee page")
     public void adminNavigatesToAddEmployeePage() {
-        addEmployeePage.pimMenu.click();
-        addEmployeePage.addEmployeeMenu.click();
+        click(addEmployeePage.pimMenu);
+        click(addEmployeePage.addEmployeeMenu);
 
     }
 
