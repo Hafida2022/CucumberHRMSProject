@@ -12,7 +12,6 @@ public class LoginSteps extends PageInitializer {
     @Given("user is on the login page")
     public void userIsOnTheLoginPage() {
 
-        // Hooks ouvre déjà le site
     }
 
 
